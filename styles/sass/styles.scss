@@ -111,6 +111,12 @@ em {
 	}
 }
 
+hr {
+  border-width: 1px;
+  border-style: dashed;
+  margin: 50px 0;
+}
+
 .icon {
   border-radius: 100%;
 }
@@ -137,7 +143,7 @@ em {
 
 	.column-4 {
 		@media screen and (min-width: 846px), print {
-			width: 33.3333333333333333%;
+			width: calc(100% / 3);
 		}
 	}
 
@@ -332,6 +338,10 @@ section {
 			margin-top: 0;
 			margin-bottom: 5px;
 		}
+
+    h3 + h4 {
+      margin-top: -20px;
+    }
 
 		ul {
 			list-style: none;
