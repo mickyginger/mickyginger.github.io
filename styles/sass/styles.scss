@@ -51,7 +51,7 @@
 $black: #282828;
 $dark-grey: #404D4D;
 $grey: #5B605F;
-$mid-grey: #9F9F9F;
+$mid-grey: #fafafa;
 $light-grey: #efefef;
 $orange: #f80;
 $light-orange: #ffb500;
@@ -194,14 +194,6 @@ section {
     &:before {
       background-color: $mid-grey;
       transform: skewY(-0.9deg);
-    }
-
-    a {
-      color: $light-orange;
-    }
-
-    ul li:before {
-      color: $light-orange !important;
     }
   }
 
