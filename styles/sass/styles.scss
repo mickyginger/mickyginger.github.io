@@ -54,7 +54,7 @@ $grey: #5B605F;
 $mid-grey: #9F9F9F;
 $light-grey: #efefef;
 $orange: #f80;
-$light-orange: rgba(255,136,0,0.1);
+$light-orange: #ffb500;
 
 *, *:before, *:after {
 	box-sizing: inherit;
@@ -76,7 +76,8 @@ body {
 h1,h2,h3,h4,h5,h6{
 	color: $dark-grey;
 	font-family: "robotobold";
-	margin: 10px 0 20px;
+	padding: 0 0 20px;
+  margin: 0;
 	font-weight: normal;
 }
 
@@ -147,11 +148,56 @@ em {
 	}
 }
 
+.container {
+  position: relative;
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: auto;
+}
+
 section {
-	padding: 0 20px 20px;
-	position: relative;
-	max-width: 1100px;
-	margin: auto;
+
+  padding: 40px 0 120px;
+  position: relative;
+
+  &:first-of-type {
+    padding-bottom: 40px;
+    &:before {
+      content: none;
+    }
+  }
+
+  &:last-of-type {
+    padding-bottom: 80px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: -20px;
+    left: 0;
+    background-color: $light-grey;
+    transform: skewY(1.2deg);
+  }
+
+  &:nth-child(even) {
+    background-color: $mid-grey;
+
+    &:before {
+      background-color: $mid-grey;
+      transform: skewY(-0.9deg);
+    }
+
+    a {
+      color: $light-orange;
+    }
+
+    ul li:before {
+      color: $light-orange !important;
+    }
+  }
 
 	h2 {
 		font-family: 'robotoboldcon';
@@ -163,71 +209,62 @@ section {
 
 		background-color: $dark-grey;
 		text-align: center;
-		padding-top: 20px;
-		margin-bottom: 40px;
 
-		.inner {
-			margin: auto;
-			max-width: 1100px;
-			text-align: left;
-			position: relative;
+		a.pdf {
+			position: absolute;
+			top: 10px;
+			right: 0;
+			display: none;
 
-			a.pdf {
-				position: absolute;
-				top: 10px;
-				right: 0;
-				display: none;
-
-				img {
-					width: 50px;
-				}
-
-				@media screen and (min-width: 477px) {
-					display: block;
-				}
+			img {
+				width: 50px;
 			}
 
-			h1 {
-				color: #fff;
+			@media screen and (min-width: 477px) {
+				display: block;
 			}
+		}
 
+		h1 {
+			color: #fff;
+		}
+
+		&>div {
+			display: inline-block;
+			vertical-align: top;
+			padding: 10px 0;
+		}
+
+		h1#name {
+			margin-top: 0;
+		}
+
+		p#email,p#phone {
+			margin-top: 0;
+			margin-bottom: 5px;
+		}
+
+		p#linkedin {
+			margin-bottom: 0;
+		}
+
+		img.hero-image {
+			width: 100px;
+			height: 100px;
+			border-radius: 100%;
+			border: 8px solid #fff;
+			box-shadow: 0px 0px 15px 0px rgba(40,40,40,0.5);
+		}
+
+
+		@media only screen and (min-width: 477px) {
 			&>div {
-				display: inline-block;
-				vertical-align: top;
-				padding: 10px 0;
+				padding: 10px 20px;
 			}
 
-			h1#name {
-				margin-top: 0;
-			}
-
-			p#email,p#phone {
-				margin-top: 0;
-				margin-bottom: 5px;
-			}
-
-			p#linkedin {
-				margin-bottom: 0;
-			}
-
-			img.hero-image {
-				width: 100px;
-				height: 100px;
-				border-radius: 100%;
-				border: 8px solid #fff;
-				box-shadow: 0px 0px 15px 0px rgba(40,40,40,0.5);
-			}
-
-
-			@media only screen and (min-width: 477px) {
-				&>div {
-					padding: 10px 20px;
-				}
-
-				img {
-					width: 150px;
-					border-width: 10px;
-				}
+			img {
+				width: 150px;
+				border-width: 10px;
 			}
 		}
 	}
