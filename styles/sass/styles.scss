@@ -117,6 +117,11 @@ hr {
   margin: 50px 0;
 }
 
+img {
+  max-width: 100%;
+  box-shadow: 0px 0px 10px 0px rgba(40,40,40,0.3);
+}
+
 .icon {
   border-radius: 100%;
 }
@@ -355,7 +360,7 @@ section {
       padding-top: 20px;
       padding-bottom: 20px;
 
-      a {
+      h4 + a {
         display: block;
         margin-bottom: 20px;
       }
