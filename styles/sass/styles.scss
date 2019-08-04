@@ -226,21 +226,21 @@ section {
     }
 
     &>div {
-      display: inline-block;
-      vertical-align: top;
       padding: 10px 0;
     }
 
-    h1#name {
+    h1 {
       margin-top: 0;
+      padding-bottom: 0;
     }
 
-    p#email,p#phone {
+    p {
+      color: $orange;
       margin-top: 0;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
-    p#linkedin {
+    p:last-of-type {
       margin-bottom: 0;
     }
 
@@ -251,6 +251,12 @@ section {
       border-radius: 100%;
       border: 8px solid #fff;
       box-shadow: 0px 0px 15px 0px rgba(40,40,40,0.5);
+    }
+
+    svg {
+      fill: $orange;
+      display: inline;
+      width: 35px;
     }
 
 
