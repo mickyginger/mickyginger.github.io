@@ -20,16 +20,22 @@
   </script>
 
   <nav>
+    <a class="burger" role="button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
     <div class="container">
       <div class="menu-left">
         <a href="">Home</a>
       </div>
       <div class="menu-right">
         <a href="#profile">Profile</a>
-        <a href="#languages-frameworks">Languages and Frameworks</a>
+        <a href="#languages-frameworks">Tech</a>
         <a href="#experience">Experience</a>
         <a href="#side-projects">Side Projects</a>
         <a href="#education">Education</a>
+        <a href="#hobbies">Interests</a>
       </div>
     </div>
   </nav>
@@ -73,7 +79,7 @@
   <section id="languages-frameworks">
     <div class="container">
       <header>
-        <h2>Languages and Frameworks</h2>
+        <h2>Tech</h2>
       </header>
 
       <div class="row">
@@ -596,7 +602,7 @@
   <section id="hobbies">
     <div class="container">
       <header>
-        <h2>Hobbies and Interests</h2>
+        <h2>Interests</h2>
       </header>
 
       <p>
@@ -605,8 +611,7 @@
     </div>
   </section>
   <script>
-    if(('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0))document.body.className='touch';else document.body.className='no-touch';
-    const a = document.querySelectorAll('nav a');a.forEach(b => b.addEventListener('click',e => { e.preventDefault();if(!e.target.hash) return window.scrollTo({top:0,behavior:'smooth'});const c = document.getElementById(e.target.hash.substr(1));c.scrollIntoView({behavior:'smooth'})}))
+    if(('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0))document.body.className='touch';else document.body.className='no-touch';const a=document.querySelector('nav'),f=a.querySelectorAll('.container a'),d=a.querySelector('.burger');f.forEach(b => b.addEventListener('click',e=>{e.preventDefault();a.classList.remove('active');if(!e.target.hash)return window.scrollTo({top:0,behavior:'smooth'});const c=document.getElementById(e.target.hash.substr(1));c.scrollIntoView({behavior:'smooth'})}));d.addEventListener('click',e=>{a.classList.toggle('active')})
   </script>
 </body>
 </html>

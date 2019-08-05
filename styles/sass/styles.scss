@@ -186,21 +186,84 @@ nav {
   text-transform: uppercase;
   font-family: "robotobold";
   background-color: $dark-grey;
-  padding: 20px;
+  padding: 15px;
   z-index: 10;
 
-  .menu-left {
-    float: left;
+  a {
+    display: block;
+    padding: 5px 0;
+  }
 
-    a {
-      margin-right: 15px;
+  .menu-left, .menu-right {
+    display: none;
+  }
+
+  &.active {
+    .menu-left, .menu-right {
+      display: block;
+    }
+
+    .burger {
+      span:nth-child(1) {
+        transform: rotate(45deg) translateX(4px);
+        transform-origin: top left;
+      }
+      span:nth-child(2) {
+        display: none;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translateX(4px);
+        transform-origin: bottom left;
+      }
     }
   }
-  .menu-right {
+
+  .burger {
     float: right;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: $orange;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+  }
+
+  @media screen and (min-width: 846px) {
+    .burger {
+      display: none;
+    }
 
     a {
-      margin-left: 15px;
+      display: inline;
+    }
+
+    .menu-left {
+      display: block;
+      float: left;
+
+      a {
+        margin-right: 15px;
+      }
+    }
+    .menu-right {
+      display: block;
+      float: right;
+
+      a {
+        margin-left: 15px;
+      }
     }
   }
 
