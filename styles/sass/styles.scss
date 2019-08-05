@@ -63,12 +63,14 @@ $light-orange: #ffb500;
 html {
   box-sizing: border-box;
   text-align: center;
+  position: relative;
+  padding-top: 50px;
 }
 
 body {
   font-family: "robotoregular";
   color: $black;
-  background-color: $light-grey;
+  background-color: $mid-grey;
   margin: 0;
   text-align: left;
 }
@@ -172,41 +174,82 @@ img {
   max-width: 1100px;
   padding: 0 20px;
   margin: auto;
+  z-index: 2;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  font-family: "robotobold";
+  background-color: $dark-grey;
+  padding: 20px;
+  z-index: 10;
+
+  .menu-left {
+    float: left;
+
+    a {
+      margin-right: 15px;
+    }
+  }
+  .menu-right {
+    float: right;
+
+    a {
+      margin-left: 15px;
+    }
+  }
+
 }
 
 section {
 
-  padding: 40px 0 80px;
+  padding: 80px 0 0;
   position: relative;
 
   &:first-of-type {
-    padding-bottom: 60px;
     &:before {
       content: none;
     }
   }
 
-  &:last-of-type {
-    padding-bottom: 60px;
-  }
+  // &:last-of-type {
+  //   padding-bottom: 60px;
+  // }
 
   &:before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 40px;
-    top: -20px;
+    height: 80px;
+    top: -40px;
     left: 0;
     background-color: $light-grey;
     transform: skewY(1.2deg);
+    z-index: -1;
   }
 
-  &:nth-child(even) {
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: -40px;
+    left: 0;
     background-color: $mid-grey;
+    transform: skewY(-0.9deg);
+    z-index: 1;
+  }
 
-    &:before {
-      background-color: $mid-grey;
-      transform: skewY(-0.9deg);
+  &:nth-child(odd) {
+    background-color: $light-grey;
+
+    &:before, &:after {
+      content: none;
     }
   }
 
@@ -217,9 +260,21 @@ section {
 
   &#details {
     max-width: none;
-
+    padding-top: 20px;
     background-color: $dark-grey;
     text-align: center;
+
+    &:after {
+      content: '' !important;
+      position: absolute;
+      width: 100%;
+      height: 80px;
+      bottom: -40px;
+      left: 0;
+      background-color: $dark-grey;
+      transform: skewY(-0.9deg);
+      z-index: 1;
+    }
 
     h1 {
       color: #fff;
@@ -251,6 +306,10 @@ section {
       border-radius: 100%;
       border: 8px solid #fff;
       box-shadow: 0px 0px 15px 0px rgba(40,40,40,0.5);
+    }
+
+    &:before, &:after {
+      content: none;
     }
 
 
@@ -374,6 +433,7 @@ section {
   }
 
   &#education {
+    padding-bottom: 30px;
     h3 {
       margin: 0;
     }

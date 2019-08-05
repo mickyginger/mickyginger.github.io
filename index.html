@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -20,9 +19,22 @@
 
   </script>
 
+  <nav>
+    <div class="container">
+      <div class="menu-left">
+        <a href="">Home</a>
+      </div>
+      <div class="menu-right">
+        <a href="#profile">Profile</a>
+        <a href="#languages-frameworks">Languages and Frameworks</a>
+        <a href="#experience">Experience</a>
+        <a href="#side-projects">Side Projects</a>
+        <a href="#education">Education</a>
+      </div>
+    </div>
+  </nav>
   <section id="details">
     <div class="container">
-      <!-- <a class="pdf" href="Mike_Hayden_CV_2015.pdf"><img src="images/pdf.png"></a> -->
       <img class="hero-image" src="images/avatar.png">
       <div>
         <h1 id="name">Mike Hayden <em>Web Developer</em></h1>
@@ -574,6 +586,7 @@
   </section>
   <script>
     if(('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0))document.body.className='touch';else document.body.className='no-touch';
+    const a = document.querySelectorAll('nav a');a.forEach(b => b.addEventListener('click',e => { e.preventDefault();if(!e.target.hash) return window.scrollTo({top:0,behavior:'smooth'});const c = document.getElementById(e.target.hash.substr(1));c.scrollIntoView({behavior:'smooth'})}))
   </script>
 </body>
 </html>
